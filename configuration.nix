@@ -111,8 +111,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs.antui.enable = true; 
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -121,9 +119,10 @@
     spotify
     obsidian
     kitty
-    dolphin
+    kdePackages.dolphin
     waybar
     git
+    fzf
     vscode
     fastfetch
     polkit_gnome
