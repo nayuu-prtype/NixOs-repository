@@ -125,7 +125,7 @@
     git
     fzf
     vscode
-    jetbrains.idea-ultimate
+    jetbrains.idea-community
     fastfetch
   #  wget
   ];
