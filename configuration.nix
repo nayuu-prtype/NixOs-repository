@@ -1,14 +1,12 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -16,6 +14,17 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    open = true;
+  };
 
   boot.initrd.luks.devices."luks-874d4a0c-cfb4-4e1e-9d64-fd47e240c124".device = "/dev/disk/by-uuid/874d4a0c-cfb4-4e1e-9d64-fd47e240c124";
   networking.hostName = "nixos"; # Define your hostname.
@@ -62,7 +71,6 @@
     wayland.enable = true;
   };
 
-
   programs.hyprland = {
     enable = true;
     withUWSM = true;
@@ -72,8 +80,15 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-
   programs.zsh.enable = true;
+
+  environment.variables.EDITOR = "neovim";
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -86,7 +101,6 @@
 
   # Enable sound with pipewire.
   security.rtkit.enable = true;
-  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -117,6 +131,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+  ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -125,7 +142,6 @@
     discord
     firefox
     spotify
-    spicetify-cli
     obsidian
     rofi
     waybar
@@ -134,7 +150,6 @@
     yazi
     fzf
     proton-pass
-    protonmail-desktop
     vscode
     jetbrains.idea-community
     fastfetch
