@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -160,13 +160,14 @@
   #  wget
   ];
 
-  programs.spicetify = 
-  let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-  in 
-  {
-  enable = true;
-  }
+  programs.spicetify = {
+    enable = true;
+
+    enabledExtensions = [
+      #inputs.spicetify.legacyPackages.${pkgs.system}.extensions.marketplace
+      inputs.spicetify.legacyPackages.${pkgs.system}.extensions.adblockify
+    ];
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -192,6 +193,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "26.05"; 
 
 }
