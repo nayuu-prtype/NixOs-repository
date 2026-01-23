@@ -167,6 +167,8 @@
       #inputs.spicetify.legacyPackages.${pkgs.system}.extensions.marketplace
       inputs.spicetify.legacyPackages.${pkgs.system}.extensions.adblockify
     ];
+
+    theme = inputs.spicetify.legacyPackages.${pkgs.system}.themes.hazy;
   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
