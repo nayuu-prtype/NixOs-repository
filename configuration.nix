@@ -7,6 +7,7 @@
       ./spicetify.nix
       ./locale-settings.nix
       ./audio-settings.nix
+      ./graphics-nvidia.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -18,16 +19,16 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  hardware.nvidia = {
-    open = true;
-  };
+#  hardware.graphics = {
+#    enable = true;
+#    enable32Bit = true;
+#  };
+#
+#  services.xserver.videoDrivers = [ "nvidia" ];
+#
+#  hardware.nvidia = {
+#    open = true;
+#  };
 
   boot.initrd.luks.devices."luks-874d4a0c-cfb4-4e1e-9d64-fd47e240c124".device = "/dev/disk/by-uuid/874d4a0c-cfb4-4e1e-9d64-fd47e240c124";
   networking.hostName = "nixos"; # Define your hostname.
