@@ -12,6 +12,7 @@
       ./users-settings.nix
       ./wm-settings.nix
       ./boot-settings.nix
+      ./hyprland.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -73,17 +74,17 @@
 #  services.seatd.enable = true;
 #
 #  security.polkit.enable = true;
-
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
-
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
-  };
+#
+#  services.displayManager.sddm = {
+#    enable = true;
+#    wayland.enable = true;
+#  };
+#
+#  programs.hyprland = {
+#    enable = true;
+#    withUWSM = true;
+#    xwayland.enable = true;
+#  };
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
