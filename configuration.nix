@@ -11,17 +11,18 @@
       ./packages.nix
       ./users-settings.nix
       ./wm-settings.nix
+      ./boot-settings.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
+#  # Bootloader.
+#  boot.loader.systemd-boot.enable = true;
+#  boot.loader.efi.canTouchEfiVariables = true;
+#
+#  # Use latest kernel.
+#  boot.kernelPackages = pkgs.linuxPackages_latest;
+#
 #  hardware.graphics = {
 #    enable = true;
 #    enable32Bit = true;
@@ -61,16 +62,16 @@
 #    LC_TELEPHONE = "pt_BR.UTF-8";
 #    LC_TIME = "pt_BR.UTF-8";
 #  };
-
+#
 #  xdg.portal = {
 #    enable = true;
 #    extraPortals = with pkgs; [
 #      xdg-desktop-portal-hyprland
 #      ];
 #  };
-
+#
 #  services.seatd.enable = true;
-
+#
 #  security.polkit.enable = true;
 
   services.displayManager.sddm = {
@@ -141,8 +142,8 @@
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+#  # List packages installed in system profile. To search, run:
+#  # $ nix search wget
 #  environment.systemPackages = with pkgs; [
 #    kitty
 #    neovim
@@ -166,7 +167,7 @@
 #    htop
 #  #  wget
 #  ];
-
+#
 #  programs.spicetify = {
 #    enable = true;
 #
@@ -206,6 +207,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "26.05"; 
+#  system.stateVersion = "26.05"; 
 
 }
