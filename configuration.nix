@@ -13,6 +13,7 @@
       ./wm-settings.nix
       ./boot-settings.nix
       ./hyprland.nix
+      ./fonts-settings.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -140,9 +141,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-  ];
+#  fonts.packages = with pkgs; [
+#    nerd-fonts.fira-code
+#  ];
 #  # List packages installed in system profile. To search, run:
 #  # $ nix search wget
 #  environment.systemPackages = with pkgs; [
