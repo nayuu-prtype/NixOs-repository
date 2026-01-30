@@ -14,6 +14,8 @@
       ./boot-settings.nix
       ./hyprland.nix
       ./fonts-settings.nix
+      ./network-manager.nix
+      ./steam.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -35,18 +37,18 @@
 #  hardware.nvidia = {
 #    open = true;
 #  };
-
-  boot.initrd.luks.devices."luks-874d4a0c-cfb4-4e1e-9d64-fd47e240c124".device = "/dev/disk/by-uuid/874d4a0c-cfb4-4e1e-9d64-fd47e240c124";
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
+#
+#  boot.initrd.luks.devices."luks-874d4a0c-cfb4-4e1e-9d64-fd47e240c124".device = "/dev/disk/by-uuid/874d4a0c-cfb4-4e1e-9d64-fd47e240c124";
+#  networking.hostName = "nixos"; # Define your hostname.
+#  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+#
+#  # Configure network proxy if necessary
+#  # networking.proxy.default = "http://user:password@proxy:port/";
+#  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+#
+#  # Enable networking
+#  networking.networkmanager.enable = true;
+#
 #  # Set your time zone.
 #  time.timeZone = "America/Recife";
 #
@@ -86,29 +88,29 @@
 #    withUWSM = true;
 #    xwayland.enable = true;
 #  };
-
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
-  programs.zsh.enable = true;
-
-  environment.variables.EDITOR = "neovim";
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
-
+#
+#  hardware.bluetooth.enable = true;
+#  services.blueman.enable = true;
+#
+#  programs.zsh.enable = true;
+#
+#  environment.variables.EDITOR = "neovim";
+#
+#  programs.steam = {
+#    enable = true;
+#    remotePlay.openFirewall = true;
+#    dedicatedServer.openFirewall = true;
+#  };
+#
 #  # Configure keymap in X11
 #  services.xserver.xkb = {
 #    layout = "us";
 #    variant = "intl";
 #  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
+#
+#  # Enable CUPS to print documents.
+#  services.printing.enable = true;
+#
 #  # Enable sound with pipewire.
 #  security.rtkit.enable = true;
 #  services.pipewire = {
@@ -137,10 +139,10 @@
 #    #  thunderbird
 #    ];
 #  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
+#
+#  # Allow unfree packages
+#  nixpkgs.config.allowUnfree = true;
+#
 #  fonts.packages = with pkgs; [
 #    nerd-fonts.fira-code
 #  ];
