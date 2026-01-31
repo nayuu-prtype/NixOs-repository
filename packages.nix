@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    kitty
     neovim
     discord
     firefox
@@ -17,10 +16,5 @@
     proton-pass
     vscode
     jetbrains.idea-oss
-    fastfetch
-    cmatrix
-    cava
-    peaclock
-    htop
   ];
 }
