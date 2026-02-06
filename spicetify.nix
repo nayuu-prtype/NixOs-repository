@@ -3,7 +3,7 @@
 let
   spicetifyPkgs = inputs.spicetify.legacyPackages.${pkgs.system};
 in {
-
+  environment.systemPackages = with pkgs; [ spotify ];
   programs.spicetify = {
     enable = true;
 

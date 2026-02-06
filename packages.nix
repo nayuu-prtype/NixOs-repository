@@ -5,7 +5,6 @@
     neovim
     discord
     firefox
-    spotify
     obsidian
     rofi
     waybar

@@ -23,7 +23,14 @@
 
   environment.systemPackages = with pkgs; [
     mpv
+    go
+    gccgo15
+    glibc
+    yt-dlp
+    protonvpn-gui
   ];
+
+  programs.nix-ld.enable = true;
 
 #  # Bootloader.
 #  boot.loader.systemd-boot.enable = true;

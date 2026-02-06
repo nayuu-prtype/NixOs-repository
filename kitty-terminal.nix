@@ -14,8 +14,11 @@ in
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      vim = "nvim";
       update = "sudo nixos-rebuild switch --flake /home/stark/nix-os#stark";
+      vim = "nvim";
+      g = "google";
+      y = "youtube";
+      c = "chatgpt";
     };
   };
 
