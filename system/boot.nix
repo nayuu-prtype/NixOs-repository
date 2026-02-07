@@ -11,7 +11,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   programs.zsh.enable = true;
-  environment.variables.EDITOR = " neovim ";
+  environment.variables.EDITOR = "nvim";
 
   system.stateVersion = "26.05";
 }
