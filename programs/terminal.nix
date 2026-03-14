@@ -16,10 +16,14 @@ in
     shellAliases = {
       update = "sudo nixos-rebuild switch --flake /home/stark/NixOS#stark";
       commit = "git add . && git commit -m";
+      push = "git push origin main";
+      status = "git status";
+      add = "git add .";
+      diff = "git diff";
       vim = "nvim";
-      g = "google";
       y = "youtube";
       c = "chatgpt";
+      g = "google";
     };
   };
 
