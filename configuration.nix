@@ -1,8 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [
+  imports = [
 
       ./system/boot.nix
       ./system/hardware.nix
@@ -18,10 +17,11 @@
 
 
       ./programs/terminal.nix
+      ./programs/firefox.nix
       ./programs/spotify.nix
       ./programs/steam.nix
 
-    ];
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -32,6 +32,7 @@
     glibc
     yt-dlp
     protonvpn-gui
+    home-manager
   ];
 
   programs.nix-ld.enable = true;

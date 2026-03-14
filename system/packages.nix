@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     neovim
     discord
-    firefox
     obsidian
     rofi
     waybar
@@ -14,7 +13,5 @@
     proton-pass
     vscode
     jetbrains.idea-oss
-    hypridle
-    hyprpaper
   ];
 }

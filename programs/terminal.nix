@@ -15,6 +15,7 @@ in
 
     shellAliases = {
       update = "sudo nixos-rebuild switch --flake /home/stark/NixOS#stark";
+      commit = "git add . && git commit -m";
       vim = "nvim";
       g = "google";
       y = "youtube";
@@ -27,7 +28,6 @@ in
     theme = "darkblood";
     plugins = [
       "web-search"
-      "git"
     ];
   };
 }
