@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./programs/chromium.nix
-    ./configs/neovim/LSPs.nix
+    ./LSPs.nix
+    ./chromium.nix
   ];
 
   home.username = "stark";

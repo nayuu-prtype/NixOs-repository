@@ -9,7 +9,6 @@
       ../../system/network.nix
       ../../system/locale.nix
       ../../system/hyprland.nix
-      ../../system/wm.nix
       ../../system/audio.nix
       ../../system/fonts.nix
       ../../system/packages.nix
