@@ -29,7 +29,7 @@ in
 
   programs.zsh.ohMyZsh = {
     enable = true;
-    theme = "darkblood";
+    theme = "intheloop";
     plugins = [
       "web-search"
     ];

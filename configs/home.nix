@@ -4,6 +4,7 @@
   imports = [
     ./LSPs.nix
     ./chromium.nix
+    ./hyprland-conf.nix
   ];
 
   home.username = "stark";
